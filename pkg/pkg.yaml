@@ -5,6 +5,7 @@ install:
 - build-base
 - musl-dev
 - libgpiod-dev
+- linux-headers
 
 steps:
 - prepare:
