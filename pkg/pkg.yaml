@@ -1,0 +1,30 @@
+name: fan-controller
+variant: scratch
+
+install:
+- build-base
+- musl-dev
+- libgpiod-dev
+
+dependencies:
+- stage: base
+
+steps:
+- prepare:
+  - sed -i 's#$VERSION#{{ .VERSION }}#' /pkg/manifest.yaml
+
+  build:
+  - |
+    mkdir -p /pkg/src/out
+    cc /pkg/src/fan-controller.c -static -Os -o /pkg/src/out/fan-controller
+
+  install:
+  - |
+    mkdir -p /rootfs/usr/local/bin/
+    mv /pkg/src/out/fan-controller /rootfs/usr/local/bin/
+
+finalize:
+- from: /rootfs
+  to: /rootfs
+- from: /pkg/manifest.yaml
+  to: /

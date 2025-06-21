@@ -1,0 +1,5 @@
+# syntax = ghcr.io/siderolabs/bldr:v0.4.1
+format: v1alpha2
+
+vars:
+    FAN_CONTROLLER_VERSION: v1.0.0
