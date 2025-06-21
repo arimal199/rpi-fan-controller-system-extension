@@ -6,9 +6,6 @@ install:
 - musl-dev
 - libgpiod-dev
 
-dependencies:
-- stage: base
-
 steps:
 - prepare:
   - sed -i 's#$VERSION#{{ .VERSION }}#' /pkg/manifest.yaml
