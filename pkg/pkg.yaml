@@ -1,5 +1,5 @@
 name: fan-controller
-variant: scratch
+variant: alpine
 
 install:
 - build-base
