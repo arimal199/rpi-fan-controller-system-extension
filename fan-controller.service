@@ -1,0 +1,11 @@
+[Unit]
+Description=GPIO Fan Controller
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/fan-controller
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
